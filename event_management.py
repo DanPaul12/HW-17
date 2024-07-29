@@ -3,7 +3,9 @@ class Event:
         self.name = name
         self.date = date
         participantslist = []
-        participantslist.append(participants)
+        participants2 = participants.split(",")
+        for participant in participants2:
+            participantslist.append(participant)
         self.participants = participantslist
 
     def add_participants(self, new_participant):
@@ -26,7 +28,7 @@ def new_guest(name, guest):
     if name in events:
         events[name].add_participants(guest)
 
-add_event("Juice Party", "12/25/24", "Anne")
+add_event("Juice Party", "12/25/24", "Anne, John")
 add_event("Brownie Party", "12/26/24", "Jeff")
 new_guest("Juice Party", "Frank")
 
